@@ -1,0 +1,703 @@
+:root {
+    --primary: #FFDE3E;
+    --secondary: #1C2833;
+    --bg-primary: #1c28337b;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    width: 100vw;
+    height: 100vh;
+    color: var(--secondary);
+}
+
+header {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+}
+
+nav {
+    display: flex;
+    height: 42px;
+    align-items: center;
+    background-color: var(--secondary);
+    color: var(--primary);
+}
+
+nav h4{
+    font-size: 1.8vw;
+}
+
+#logo {
+    width: 3vw;
+    margin: 0 10px 0 20px;
+}
+
+#description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 3vh;
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+#description h6 {
+    font-size: 1vw;
+    margin: 0 20px 0 20px;
+}
+
+main {
+    padding-top: 60px;
+    display: flex;
+    height: calc(100vh - 60px);
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#sidebar {
+    margin: 0;
+    padding: 0;
+    width: 9vw;
+    background-color: white;
+    position: fixed;
+    height: 100%;
+    border-right: 3px solid #1C2833;
+}
+
+#sidebar a {
+    margin-top: 1vw;
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+
+#sidebar h5 {
+    padding: 1vw;
+    font-size: 1vw;
+    margin: 0;
+}
+
+#sidebar a.active {
+    border-radius: 50px 0 0 50px;
+    background-color: var(--secondary);
+    color: var(--primary);
+}
+
+#sidebar a:hover:not(.active) {
+    border-radius: 50px 0 0 50px;
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+
+#contents {
+    width: calc(100vw - 9vw);
+    margin-left: 9vw;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    align-content: space-between;
+    background-color: white;
+    overflow: hidden;
+}
+
+.tabcontent {
+    overflow-y: auto;
+    overflow-x: auto;
+    padding: 1vw;
+    width: 100%;
+}
+
+footer {
+    width: 100%;
+    height: 9vh;
+    padding: 1px;
+    text-align: center;
+    background-color: var(--secondary);
+    color: lightcyan;
+}
+
+footer h5{
+    font-size: 1vw;
+}
+
+/* Style untuk scroll bar vertikal */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+    min-height: 10px;
+    width: 10px;
+    border: 1px solid var(--secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary);
+}
+
+::-webkit-scrollbar-corner {
+    background-color: #f1f1f1;
+    border-radius: 0 0 10px 0;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+/* Style untuk overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--primary);
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Style untuk animasi loading */
+.loader {
+    border: 8px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 8px solid var(--primary);
+    width: 80px;
+    height: 80px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#contents {
+    overflow: auto;
+}
+
+#judul {
+    font-family: sans-serif;
+    font-size: 1.6vw;
+    text-align: center;
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: 10% 45% 42%;
+    grid-gap: 1%;
+    overflow: hidden;
+    padding: 5px;
+    justify-content: center;
+
+}
+
+#filter__dashboard select {
+    width: auto;
+    /* Ubah lebar select */
+    font-size: 12px;
+    margin-left: 20px;
+    padding: 2px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: start;
+    margin-bottom: 5px;
+}
+
+#note {
+    font-family: arial;
+    font-size: 1vw;
+    text-align: left;
+}
+
+.section {
+    margin: 5px;
+    padding: 5px;
+    border: 0 5px solid #7f8994;
+    border-radius: 10px;
+    gap: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    justify-content: space-between
+}
+
+.section__title {
+    font-size: 1.6vw;
+    font-weight: bold;
+    margin: 2vh;
+}
+
+.section canvas {
+    margin-bottom: 20px;
+}
+
+.section__total-revenue {
+    font-size: 2em;
+    color: var(--bg-primary);
+    box-sizing: content-box;
+}
+
+.section__total-transaction {
+    font-size: 2em;
+    color: var(--bg-primary);
+    box-sizing: content-box;
+}
+
+.dropdown {
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    border-color: transparent;
+}
+
+.stats-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.stats {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.action {
+    font-size: 12px;
+}
+
+#prevPage,
+#nextPage {
+    background-color: #FFDE3E;
+    color: #1c2833;
+
+    /* Ubah warna teks tombol */
+    padding: 5px 10px;
+    border: 1px solid #1C2833;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+
+}
+
+#prevPage:hover,
+#nextPage:hover {
+    background-color: #1C2833;
+    /* Ubah warna latar belakang tombol */
+    color: white;
+    /* Ubah warna latar belakang tombol saat mouse di hover */
+}
+
+.filter__data {
+    background-color: #f7f7f7;
+    /* Ubah warna latar belakang filter */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 25vw;
+    /* Ubah lebar filter */
+    margin: 10px;
+}
+
+.filter__data label {
+    font-weight: bold;
+}
+
+.filter__data input[type="text"] {
+    width: 20vw;
+    /* Ubah lebar input text */
+    font-size: 12px;
+    padding: 3px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.filter__data select {
+    max-width: 20vh;
+    /* Ubah lebar select */
+    font-size: 12px;
+    padding: 3px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#dataTable {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f2f2f2;
+    /* Ubah warna latar belakang tabel */
+    color: #333;
+    overflow: auto;
+    /* Ubah warna teks */
+    font-size: 8px;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #e9e9e9;
+}
+
+#dataTable th,
+#dataTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#dataTable th {
+    background-color: #1c2833;
+    /* Ubah warna latar belakang header */
+    color: white;
+    /* Ubah warna teks header */
+}
+
+#dataTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+    /* Ubah warna latar belakang baris genap */
+}
+
+#dataTable tr:hover {
+    background-color: #ffdf3e72;
+    /* Ubah warna latar belakang saat mouse di hover */
+}
+
+.action {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+
+/*style untuk modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.modal-image {
+    width: 150px;
+    height: auto;
+    margin: 20px 0;
+}
+
+.modal-text {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.modal__button {
+    background-color: #FFDE3E;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.modal__button:hover {
+    background-color: #1C2833;
+    color: white;
+}
+
+/* Style untuk tampilan mobile */
+@media (max-width: 768px) {
+    #sidebar {
+        width: 100%;
+        height: 40px;
+        position: fixed;
+        background-color: #f1f1f1;
+    }
+
+    #sidebar a.active {
+        border-radius: 0 0 5px 5px;
+    }
+
+    #sidebar a {
+        margin-top: 0;
+        margin-right: 5px;
+        float: left;
+        padding: 0;
+    }
+
+    #sidebar a:hover:not(.active) {
+        border-radius: 0 0 5px 5px;
+    }
+
+    #contents {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 40px;
+    }
+
+
+    .loader {
+        width: 60px;
+        height: 60px;
+    }
+
+    .section__title {
+        font-size: 18px;
+    }
+
+    #grid-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #filter__dashboard {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+
+
+.profile{
+    display: grid;
+row-gap: 7vh;
+}
+
+.mentor-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 60vw;
+    margin: 0 auto;
+}
+
+.mentor {
+    text-align: center;
+}
+
+.mentors h2{
+    font-size: 2vw;
+    text-align: center;
+}
+
+.mentor h5 {
+    margin-bottom: 1vh;
+    font-size: 1.1vw;
+}
+
+.mentor-profile {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    flex: 1;
+    flex-direction: column;
+}
+
+.mentor-profile img {
+    width: 7vw;
+    height: 7vw;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.mentor-profile h5 {
+    margin: 0;
+}
+
+.team-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px 20px;
+}
+
+.team-row {
+    display: flex;
+    margin-bottom: 5vh;
+    justify-content: center;
+}
+
+.team h2{
+    font-size: 2vw;
+    text-align: center;
+}
+
+.team-member {
+    text-align: center;
+    width: 20%;
+    margin-left: 2vw;
+}
+
+.team-member h5{
+    margin-bottom: 1vh;
+    font-size: 1.1vw;
+}
+
+.team-member img {
+    width: 7vw;
+    height: 7vw;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* Popup */
+.popup {
+    display: none;
+    /* Menyembunyikan popup secara default */
+    position: fixed;
+    /* Posisi tetap di layar */
+    top: 50%;
+    /* Jarak atas 50% dari layar */
+    left: 50%;
+    /* Jarak kiri 50% dari layar */
+    transform: translate(-50%, -50%);
+    /* Menggeser popup ke tengah */
+    width: 25vw;
+    height: 50vh;
+    background-color: #f5f5f5;
+    padding: 20px 20px;
+    /* Padding atas/bawah 20px, kiri/kanan 20px */
+    border-radius: 10px;
+    box-shadow: 1 1 10px rgba(0, 0, 0, 0.2);
+    border: 1.5px solid #110909;
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Menjajarkan konten ke tengah secara horizontal */
+    height: 100%;
+    justify-content: center;
+    /* Menjajarkan konten ke tengah secara vertikal */
+}
+
+.popup-content p {
+    text-align: left;
+    /* Teks di dalam elemen rata kiri */
+    margin: 8px 0;
+    width: 100%;
+}
+
+.popup-content img {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    /* Margin bawah 10px */
+}
+
+.close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #ebbb37;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+/* Ensure responsive layout */
+@media screen and (max-width: 768px) {
+    .mentor-container {
+        flex-direction: column;
+        max-width: 100%;
+        gap: 20px;
+    }
+
+    .team-row {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .team-member {
+        width: 100%;
+        margin-left: 0;
+    }
+}
